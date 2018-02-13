@@ -46,6 +46,10 @@ window.onload = function(){ //onload guard
 		alert("someone joined")
 	})
 
+	socket.on('someone left', function(){
+		alert("someone left")
+	})
+
 	//KEYS
 	window.addEventListener("keydown", function (event) {
 		if (event.defaultPrevented) {

@@ -1,27 +1,19 @@
 <html>
   <head>
     <title>Multiplayer Pong</title>
-    <style>
-    #Window{
-    border: 5px solid black;
-    padding: 0;
-    margin: auto;
-    display: block;
-    width: 800px;
-    height: 800px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    }
-  </style>
    <script src="/socket.io/socket.io.js"></script>
    <script src="/mainloop.js/build/mainloop.min.js"></script>
+   <style>
+   body{
+    background-color: powderblue
+   }
+ </style>
   </head>
-  <body>
-    <p> A and D to move </p>
+    <body>
+    <center>
+    <h2> A and D to move </h2>
     <canvas id="window": height = 800 width = 800></canvas>
+  </center>
   </body>
   <script src="/static/game.js"></script>
 </html>

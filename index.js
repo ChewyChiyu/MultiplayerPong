@@ -7,7 +7,7 @@ const mainLoopInstance = require('mainloop.js/build/mainloop.min.js')
 
 const canvas = {width: 800, height: 800}
 
-const paddleSpeed = 0.5
+const paddleSpeed = 0.15
 const ballSpeed = 0.3
 
 
@@ -73,6 +73,7 @@ io.on('connection', function(socket) {
 
 	socket.on('disconnect', function() {
 		removeUser(socket.id)
+		socket.broadcast.emit('someone left', "")
 	})
 
 	socket.on('moveX', function(data) {

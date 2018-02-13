@@ -120,7 +120,6 @@ if(isSpectator){ return }
 		context.arc(ball.x, ball.y, ballRaidus, 0, 2 * Math.PI);
 		context.fill();
 
-
 		//drawing score
 		context.font = "26px Comic Sans MS";
 		context.fillText(score.top + "           " + score.bottom,canvas.width*.42,canvas.height/2);	
@@ -129,11 +128,8 @@ if(isSpectator){ return }
 
 	function startClient(){
 		if(!isSpectator){
-			var r = confirm("Do you want to join game");
-			if(r){
-				socket.emit('new user', "")
-			}
-
+			var r = confirm("You are now in the game");
+			socket.emit('new user', "")
 		}
     	//initializing
       	MainLoop.setUpdate(update).setDraw(draw).start(); //load mainloop

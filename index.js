@@ -69,11 +69,14 @@ io.on('connection', function(socket) {
 	socket.on('new user', function(data){
 		addUser(socket.id) //adding a user
 		socket.broadcast.emit('someone joined', "")
+		verbose("someone joined " + users.length + " players now")
 	})
 
 	socket.on('disconnect', function() {
-		removeUser(socket.id)
+		if(removeUser(socket.id)){
 		socket.broadcast.emit('someone left', "")
+		verbose("someone left " + users.length + " players left")
+		}
 	})
 
 	socket.on('moveX', function(data) {
@@ -107,9 +110,10 @@ function removeUser(id){
 	for(var i = 0; i < users.length; i++){
 		if(users[i].id == id){
 			users.splice(i,1)
-			return;
+			return true;
 		}
 	}
+	return false
 }
 
 function update(delta){

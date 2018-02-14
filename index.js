@@ -144,11 +144,11 @@ function update(delta){
 		ball.dx *= -1
 	}
 
-	if(ball.x > paddleTop.x && ball.x < paddleTop.x + paddleWidth && ball.y > paddleTop.y && ball.y < paddleTop.y + paddleHeight){
+	if(paddleTop.x < ball.x + ballRaidus && paddleTop.x + paddleWidth > ball.x && paddleTop.y < ball.y + ballRaidus && paddleTop.y + paddleHeight > ball.y){
 		ball.dy *= -1
 	}
 
-	if(ball.x > paddleBottom.x && ball.x < paddleBottom.x + paddleWidth && ball.y > paddleBottom.y && ball.y < paddleBottom.y + paddleHeight){
+	if(paddleBottom.x < ball.x + ballRaidus && paddleBottom.x + paddleWidth > ball.x && paddleBottom.y < ball.y + ballRaidus && paddleBottom.y + paddleHeight > ball.y){
 		ball.dy *= -1
 	}
 
